@@ -40,6 +40,7 @@ public class ItemServiceImpl implements ItemService {
         Optional<ItemModel> optional = repository.findById(id);
         if (optional.isPresent()) {
             optional.get().setName(item.getName());
+            optional.get().setItemCode(item.getItemCode());
             optional.get().setPrice(item.getPrice());
             try {
                 repository.save(optional.get());
